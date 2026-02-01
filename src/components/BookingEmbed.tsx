@@ -21,7 +21,7 @@ export default function BookingEmbed() {
 
   const handleBooking = () => {
     if (typeof window !== 'undefined') {
-      const win = window;
+      const win = window as Window & { gtag?: (...args: unknown[]) => void; fbq?: (...args: unknown[]) => void };
       win.gtag?.('event', 'begin_booking', {
         event_category: 'engagement',
         event_label: 'calendly_open',
